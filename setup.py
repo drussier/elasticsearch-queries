@@ -5,26 +5,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="api-diseases-extractor",
+    name="es-queries",
     version="0.1",
     description="API diseases extractor",
     author="Damien RUSSIER",
     author_email="damien.russier@360medics.com",
-    url="https://github.com/360medics/ds-api-diseases-extractor.git",
+    # url="https://github.com/360medics/ds-api-diseases-extractor.git",
     packages=find_packages(),
-    package_data={
-        '': ['data/*.json.gz'],
-    },
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
     classifiers=[
         "Programming language :: Python :: 3",
         "Operating System :: macOS Catalina 10.15.7",
     ],
-    entry_points={
-        "console_scripts": [
-            "api-diseases-extractor = api_diseases_extractor.main:main",
-        ],
-    },
+    # entry_points={
+    # "console_scripts": [
+    # "api-diseases-extractor = api_diseases_extractor.main:main",
+    # ],
+    # },
     python_requires=">=3.6",
 )
