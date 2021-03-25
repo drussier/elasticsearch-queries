@@ -1,0 +1,30 @@
+# https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
+# http://www.locallyoptimal.com/blog/2019/08/23/why-you-should-use-black-for-your-python-style-linting/
+repos:
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    - id: check-yaml
+      files: ^.github/workflows/.*\.yml$
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+
+  - repo: https://github.com/python/black
+    rev: stable
+    hooks:
+    - id: black
+      files: ^src/.*\.py$
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.9
+    hooks:
+    - id: flake8
+      files: ^src/.*\.py$
+
+  - repo: git@github.com:humitos/mirrors-autoflake.git
+    rev: v1.3
+    hooks:
+    - id: autoflake
+      files: ^src/.*\.py$
+      args: ['--in-place', '--remove-all-unused-imports', '--remove-unused-variable']
