@@ -35,11 +35,12 @@ def refresh_index(index_name, client):
     client.indices.refresh(index=index_name)
 
 
-def delete_index(index_name, client):
+def delete_index(index_name, client=None):
+    client = Elasticsearch() if client is None else client
     # ignore 404 and 400
     res = client.indices.delete(index=index_name, ignore=[400, 404])
     print(f"{index_name} deletion status :", res)
-    return
+    return client
 
 
 ################################################################################
