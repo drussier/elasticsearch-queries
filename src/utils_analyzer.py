@@ -86,6 +86,7 @@ REVERSE_ANALYZER = {
 
 
 # https://www.elastic.co/guide/en/elasticsearch/guide/current/asciifolding-token-filter.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-htmlstrip-charfilter.html
 ACCENT_ANALYZER = {
     "analyzer": {
         "folding": {

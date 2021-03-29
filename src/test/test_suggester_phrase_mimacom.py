@@ -12,6 +12,7 @@ class UTests(unittest.TestCase):
                 None: {  # fuzziness
                     "appar": ["Appareil génital féminin"],
                     "appareil gén": ["Appareil génital féminin"],
+                    "appareil gen": [],  # => problem when no accent in user query
                     "apareil gén": [],
                 },
                 1: {  # fuzziness
@@ -53,6 +54,7 @@ class UTests(unittest.TestCase):
                     },
                     "appareil gen": {
                         "suggest-1": [],
+                        # that's what we want : suggestion when no accent in user's query and accent in possible completions list!!
                         "suggest-2": ["Appareil génital féminin"],
                     },
                 },
