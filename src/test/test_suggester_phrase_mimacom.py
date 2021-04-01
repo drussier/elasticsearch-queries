@@ -14,6 +14,7 @@ class UTests(unittest.TestCase):
                     "appareil gén": ["Appareil génital féminin"],
                     "appareil gen": [],  # => problem when no accent in user query
                     "apareil gén": [],
+                    "géni": [],
                 },
                 1: {  # fuzziness
                     "apareil gén": ["Appareil génital féminin"],
